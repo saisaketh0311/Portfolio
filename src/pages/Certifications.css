@@ -1,0 +1,123 @@
+/* Certifications.css */
+
+.certifications-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 8rem 1rem 2rem; /* Added top padding for navbar */
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0, 0, 1, 0.9) 10%, rgba(20, 20, 20, 0.9) 100%);
+  background-size: 200% 200%;
+  color: #fff;
+  animation: backgroundShift 15s ease-in-out infinite;
+}
+
+.certifications-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #e50914;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  animation: slideDown 0.8s ease-in-out forwards;
+  transform: translateY(-20px);
+  opacity: 0;
+  letter-spacing: 1px;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.certification-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px) rotate(-2deg) scale(0.95);
+  animation: cardFadeIn 0.6s forwards ease-in-out;
+  animation-delay: var(--delay);
+}
+
+.certification-card:hover {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 0 12px 28px rgba(229, 9, 20, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+.certification-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.certification-icon {
+  font-size: 2.5rem;
+  color: #e50914;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.certification-link {
+  font-size: 1.25rem;
+  color: rgba(229, 9, 20, 0.9);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.certification-card:hover .certification-link {
+  color: #e50914;
+  transform: translateX(4px);
+}
+
+.issued-date {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 300;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideDown {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFadeIn {
+  to { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .certifications-container {
+    padding: 6rem 1rem 2rem; /* Adjusted top padding for mobile navbar */
+  }
+  
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .certification-card {
+    padding: 1.5rem;
+  }
+}

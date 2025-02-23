@@ -1,0 +1,102 @@
+/* WorkExperience.css */
+.timeline-container {
+  background: #141414;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+
+.timeline-title {
+  font-size: 3.5rem;
+  color: #fff !important; /* Changed to white */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  margin: 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  /* Removed background gradient and text-shadow */
+  text-shadow: none !important; /* Explicitly remove text shadow */
+}
+
+.vertical-timeline::before {
+  background: #333 !important;
+}
+
+.vertical-timeline-element-content {
+  background: #181818 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid #333;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vertical-timeline-element-content:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 12px 35px rgba(229, 9, 20, 0.3) !important;
+  border-color: #E50914;
+}
+
+.vertical-timeline-element-date {
+  color: #808080 !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 3px #181818, 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.vertical-timeline-element-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px #181818, 0 8px 25px rgba(229, 9, 20, 0.4);
+}
+
+.vertical-timeline-element-title {
+  color: #E50914 !important;
+  font-size: 1.8rem !important;
+  margin-bottom: 0.8rem;
+}
+
+.vertical-timeline-element-subtitle {
+  color: #B3B3B3 !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 1.2rem;
+}
+
+.vertical-timeline-element-tech {
+  color: #E50914 !important;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-points {
+  border-left: 3px solid #E50914;
+  padding-left: 1.5rem;
+}
+
+.summary-point {
+  color: #B3B3B3 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.summary-point::before {
+  content: '▹';
+  color: #E50914;
+  position: absolute;
+  left: -1rem;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
